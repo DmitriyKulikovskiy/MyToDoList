@@ -17,9 +17,9 @@ body {
   text-align: center;
   width: 820px;
   height: auto;
-  background-color: rgba(0,0,0, 0.4);
+  background-color: rgba(0,0,0, 0.9);
   border-radius: 38px;
-  border: 1px solid purple;
+  border: 1px solid grey;
 }
 
 h1 {
@@ -63,6 +63,8 @@ b {
   font-family: 'Orbitron', sans-serif;
 }
 
+
+
 .setTask:hover {
   background-color: rgb(141, 3, 118, 0.2);
   border-radius: 5px;
@@ -90,7 +92,9 @@ b {
   background-color: rgb(141, 3, 118, 0.2);
   border-radius: 5px;
   cursor: pointer;
+  
 }
+
 
 .item  {
   font-size: 20px;
@@ -143,6 +147,10 @@ b {
   transform: translate(-50%, -35%);
 }
 
+
+
+
+
 .item .close {
   position: relative;
 }
@@ -160,7 +168,7 @@ b {
 
 }
 
-.filterButtonsBox button {
+.container button {
   width: auto;
   height: 33px;
   padding-top: 7px;
@@ -186,6 +194,9 @@ b {
   background-color: rgb(141, 3, 118, 0.2);
   border-radius: 5px;
 }
+
+
+
 
 .made {
   font-size: 12px;

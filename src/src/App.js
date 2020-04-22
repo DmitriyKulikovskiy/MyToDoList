@@ -3,7 +3,7 @@ import s from './App.module.css';
 import SetFormContainer from './components/SetItem/set-item-container';
 
 
-const App = () => {
+const App = (props) => {
   
  
   return (
@@ -15,5 +15,6 @@ const App = () => {
 
   )
 }
+
 
 export default App;
