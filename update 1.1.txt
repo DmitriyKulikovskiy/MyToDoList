@@ -1,0 +1,7 @@
+Update - version 1.1
+Updates:
+1)  Some stylistics updates
+2) Abbiliy to Edit Task
+3) Tasks's Date/Time (without Redux) in case of server absence
+4) Button - all tasks delete
+5)Task's number

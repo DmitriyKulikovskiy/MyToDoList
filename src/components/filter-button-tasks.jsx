@@ -9,7 +9,7 @@ const FilterButtonTasks = ({currentTasks,changeFilter,removeAllDone}) => {
             <button  onClick={() => changeFilter('done')}> done</button>
             <button  onClick={() => changeFilter('active')}> active</button>
             {currentTasks.some(task => task.status)  
-                ? <button onClick={removeAllDone}>Remove Done</button> 
+                ? <button onClick={removeAllDone} className={s.clearDone}>clear done</button> 
                 : null}
         </div>
     )

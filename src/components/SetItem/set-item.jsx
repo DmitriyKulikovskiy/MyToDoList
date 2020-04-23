@@ -12,14 +12,14 @@ class SetForm extends React.Component {
     }
   }
 
-  onInputChange = event => {
+  onInputChange = e => {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault();
 
     if(this.state.text === '') {
       return undefined
@@ -34,10 +34,10 @@ class SetForm extends React.Component {
 
     switch (activeFilter) {
       case 'done': {
-        return tasks.filter(task => task.status);
+        return tasks.filter(t => t.status);
       }
       case 'active': {
-        return tasks.filter(task => !task.status)
+        return tasks.filter(t => !t.status);
       }
       default:
         return tasks;
@@ -46,19 +46,21 @@ class SetForm extends React.Component {
 
 
   render() {
+    const {tasks,editStatus,deleteTask,removeAllTasks,editTask,removeAllDone,changeFilter} = this.props;
     const currentTasks = this.filterTasks(this.props.tasks, this.props.filter);
 
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input name={"text"} onChange={this.onInputChange} value={this.state.text}placeholder={"Set your task"} className={s.setTask}/>
+            <input name={"text"} onChange={this.onInputChange} value={this.state.text}placeholder={"SET YOUR TASK"} className={s.setTask}/>
             <button onClick={this.handleSubmit} className={s.add}>ADD</button>
+            <button onClick={removeAllTasks} className={s.clearAll}>Clear</button>
           </div> 
         </form>
-        <CurrentTasks tasks={this.props.tasks}/>
-        <ListTasks  currentTasks={currentTasks} editStatus={this.props.editStatus} deleteTask={this.props.deleteTask}/>
-        <FilterButtonTasks  currentTasks={currentTasks} changeFilter={this.props.changeFilter} removeAllDone={this.props.removeAllDone}/> 
+        <CurrentTasks tasks={tasks}/>
+        <ListTasks tasks={tasks} currentTasks={currentTasks} editStatus={editStatus} deleteTask={deleteTask} editTask={editTask}/>
+        <FilterButtonTasks  currentTasks={currentTasks} changeFilter={changeFilter} removeAllDone={removeAllDone}/> 
       </div>
     )
   }

@@ -1,6 +1,8 @@
 body {
   background: url('https://www.zastavki.com/pictures/originals/20193D-graphics_Neon_glowing_lamps_on_blue_background_132717_.jpg');
-  
+  counter-reset: section; 
+  width: auto;
+  height: auto;
 }
 
 .main-box {
@@ -21,6 +23,8 @@ body {
   border-radius: 38px;
   border: 1px solid purple;
 }
+
+
 
 h1 {
   /* font-family: 'Abel', sans-serif; */
@@ -55,8 +59,8 @@ b {
   border-right: none;
   border-bottom: 2px;
   background-color: rgba(191, 191, 191, 0.4);
-  color: purple;
-  text-transform: uppercase;
+
+  color: #fff;
   cursor: text;
 
   font-family: 'Abel', sans-serif;
@@ -68,10 +72,10 @@ b {
   border-radius: 5px;
 }
 
-.add {
+.add, .clearAll {
   display: inline-block;
   margin-left: 8px;
-  width: 50px;
+  width: auto;
   height: 33px;
   padding-top: 7px;
   padding-bottom: 3px;
@@ -80,6 +84,8 @@ b {
   border: none;
   border-radius: 2px;
   font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
 
   font-family: 'Abel', sans-serif;
   font-family: 'Orbitron', sans-serif;
@@ -93,12 +99,15 @@ b {
 }
 
 .item  {
-  font-size: 20px;
-  color: white;
+  color: #fff;
+
+  font-size: 21px;
   margin-top: 10px;
   margin-bottom: 20px;
   margin-right: 46px;
+  cursor: text;
 }
+
 
 .item .task {
   border: 1px solid green;
@@ -106,7 +115,6 @@ b {
   width: 333px;
   height: 30px;
   margin-left: 20px;
-  
   display: inline-block;
 
   font-family: 'Abel', sans-serif;
@@ -161,7 +169,7 @@ b {
 }
 
 .filterButtonsBox button {
-  width: auto;
+  width: 80px;
   height: 33px;
   padding-top: 7px;
   padding-bottom: 3px;
@@ -181,6 +189,10 @@ b {
   font-weight: bold;
 }
 
+.filterButtonsBox .clearDone {
+  width: 130px;
+}
+
 
 .container button:hover {
   background-color: rgb(141, 3, 118, 0.2);
@@ -190,14 +202,48 @@ b {
 .made {
   font-size: 12px;
   color:rgb(179, 179, 179);
-  margin-bottom: 8px;
   text-transform: uppercase;
   
   font-family: 'Abel', sans-serif;
   font-family: 'Orbitron', sans-serif;
+}
 
+.version {
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  float: right;
 
+  font-family: 'Abel', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.version v {
+  font-size: 10px;
 }
 
 
 
+.MyDate{
+  color: purple;
+  font-size: 13px;
+  margin-bottom: 1px;
+  display: inline-block;
+  margin-left: 220px;
+}
+
+.numeration{
+  font-family: 'Abel', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  color: purple;
+  padding-left: 15px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.numeration::before {
+  counter-increment: section;                
+  content: 'Task: ' counter(section);
+}

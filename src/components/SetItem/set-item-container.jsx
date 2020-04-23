@@ -1,7 +1,7 @@
 import React from 'react'
 import SetForm from './set-item'
 import { compose } from 'redux'
-import { addTask, editStatus, deleteTask,removeAllDone} from '../../redux/main-reducer';
+import { addTask, editStatus, deleteTask,removeAllDone,removeAllTasks,editTask} from '../../redux/main-reducer';
 import {changeFilter} from '../../redux/filter-reducer'
 import { connect } from 'react-redux';
 
@@ -27,6 +27,6 @@ const mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps,{editStatus ,addTask,deleteTask,changeFilter,removeAllDone}))(SetForm)
+export default compose(connect(mapStateToProps,{editStatus ,addTask,deleteTask,changeFilter,removeAllDone,removeAllTasks,editTask}))(SetForm)
     
 
