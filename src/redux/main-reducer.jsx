@@ -1,6 +1,6 @@
-import React from 'react'
 import shortid from 'shortid';
 
+const GET_TASK_VALUE = 'GET_TASK_VALUE'
 const ADD_TASK = 'ADD_TASK'
 const EDIT_STATUS = 'EDIT_STATUS'
 const TASK_DELETE = 'TASK_DELETE'
@@ -9,15 +9,21 @@ const REMOVE_ALL_TASKS = 'REMOVE_ALL_TASKS'
 const EDIT_TASK = 'EDIT_TASK'
 
 
-
 const initialState = {
+    taskValue: '',
     tasks: []
 };
 
 
 const mainReducer = (state = initialState, action) => {
     switch (action.type) {
-
+        case GET_TASK_VALUE: {
+            return {
+                ...state,
+                taskValue: action.value
+            }
+        }
+    
         case ADD_TASK: {
             return {
                 ...state,
@@ -70,14 +76,13 @@ const mainReducer = (state = initialState, action) => {
 }
 
 //window.store.getState().mainReducer.tasks
-
+export const getTaskValue = value => ({type: 'GET_TASK_VALUE',value})
 export const addTask = task => ({type: 'ADD_TASK', task});
 export const editStatus = id => ({type: 'EDIT_STATUS', id})
 export const deleteTask = id => ({type: 'TASK_DELETE', id})
 export const removeAllDone = () => ({type:'REMOVE_ALL_DONE'})
 export const removeAllTasks = () => ({type: 'REMOVE_ALL_TASKS'})
 export const editTask = (id,newTask) => ({type: 'EDIT_TASK', id, newTask})
-
 
 export default mainReducer;
 
